@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New task</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body
+        {
+            font-size: 3rem;
+        }
+
+        #middle_div{
+            margin-top: 100px;
+            border: 7px solid #333; /* Light black border */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 255); /* Light black shadow */
+            padding: 20px; /* Padding for inner content */
+            background-color: #fff; /* White background */
+        }
+        .form-control{
+          height: 5rem;
+            font-size: 2rem;
+        }
+        h1{
+            font-size: 4rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class = "container">
+    <div class = "row">
+        <div id="middle_div" class = "col-md-6 col-md-offset-3 rounded border border-light shadow p-3 mb-5 bg-white">
+
+            <h1> <b>Add New Work in List</b> </h1>
+            <hr>
+            <form th:action="@{/newtodo}" th:object="${list}" method ="POST">
+                <div class = "form-group">
+                    <label for ="Task"> Task </label> :
+                    <input type="text" th:field="*{task}" id="Task"  class = "form-control"  placeholder="Enter New Task" autofocus="autofocus" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="timing">Time</label>:
+                    <input type="text" th:field="*{time}"  id="timing"  class="form-control" placeholder="Enter Time" />
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" id="login-submit"
+                                   class="form-control btn btn-primary" value="Add" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+<!--<div class="container" id="Container" >-->
+<!--    <h1>Add New TODO</h1>-->
+
+<!--    <form action="#" th:action="@{/newtodo}" th:object="${list}" method ="POST">-->
+<!--        <input type="text" th:field="*{id}"-->
+<!--               placeholder="Automatically added"  disabled>-->
+<!--        <input type="text" th:field="*{task}"-->
+<!--               placeholder="Enter Task"required>-->
+<!--        <input type="text" th:field="*{time}"-->
+<!--               placeholder="Enter Time" required> <br>-->
+<!--        <button type="submit" class="btn btn-primary col-12 btn-hover-shadow"><b> Add</b></button>-->
+<!--    </form>-->
+<!--</div>-->
